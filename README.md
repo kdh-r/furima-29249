@@ -1,24 +1,60 @@
-# README
+#フリマアプリテーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+##users テーブル
 
-* Ruby version
+|  column  |  type  |  options    |
+|----------|--------|-------------|
+| nickname | string | null: false |
+|  email   | string | null: false |
 
-* System dependencies
 
-* Configuration
+###Association
+- has_many :items
+- has_many :buy
 
-* Database creation
 
-* Database initialization
+##items　テーブル
 
-* How to run the test suite
+|  column   |  type      |  options                       |
+|-----------|------------|--------------------------------|
+| item_name | string     | null: false                    |
+| category  | string     | null: false                    |
+| price     | integer    | null: false                    |
+| user      | references | null: false, foreign_key: true |
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+###Association
+- belongs_to :user
+- has_many :buy
 
-* ...
+
+##buy　テーブル
+
+|  column   |  type      |  options                       |
+|-----------|------------|--------------------------------|
+| user      | references | null: false, foreign_key: true |
+| item      | references | null: false, foreign_key: true |
+
+
+###Association
+- belongs_to :users
+- belongs_to :items
+- has_one :user_address
+
+
+##user_address テーブル
+
+
+|  column     |  type      |  options                       |
+|-------------|------------|--------------------------------|
+| postal code | integer    | null: false                    |
+| prefectures | string     | null: false                    |
+| cities      | string     | null: false                    |
+| address     | integer    | null: false                    |
+| phone number| integer    | null: false                    |
+| user        | references | null: false, foreign_key: true |
+
+
+###Association
+- belongs_to :buy

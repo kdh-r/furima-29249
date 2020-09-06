@@ -26,7 +26,7 @@
 |  column          |  type      |  options                       |
 |------------------|------------|--------------------------------|
 | name             | string     | null: false                    |
-| text             | string     | null: false                    |
+| text             | text       | null: false                    |
 | category_id      | integer    | null: false                    |
 | status_id        | integer    | null: false                    |
 | postage_type_id  | integer    | null: false                    |

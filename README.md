@@ -25,10 +25,10 @@
 
 |  column          |  type      |  options                       |
 |------------------|------------|--------------------------------|
-| item_name        | string     | null: false                    |
-| item-text        | string     | null: false                    |
+| name             | string     | null: false                    |
+| text             | string     | null: false                    |
 | category_id      | integer    | null: false                    |
-| item_status_id   | integer    | null: false                    |
+| status_id        | integer    | null: false                    |
 | postage_type_id  | integer    | null: false                    |
 | ship_from_id     | integer    | null: false                    |
 | delivery_time_id | integer    | null: false                    |
@@ -65,7 +65,7 @@
 | prefecture_id  | integer    | null: false                    |
 | city           | string     | null: false                    |
 | address        | string     | null: false                    |
-| building       | string     | null                           |
+| building       | string     |                                |
 | phone_number   | string     | null: false                    |
 | buy            | references | null: false, foreign_key: true |
 

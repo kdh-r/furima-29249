@@ -1,7 +1,7 @@
-#フリマアプリテーブル設計
+# フリマアプリテーブル設計
 
 
-##users テーブル
+## users テーブル
 
 |  column              |  type  |  options    |
 |----------------------|--------|-------------|
@@ -13,21 +13,21 @@
 |first_name            |string  | null: false |
 |last_name_kana        |string  | null: false | 
 |first_name_kana       |string  | null: false |
-|date_id               |integer | null: false |
+|birthday_id           |date    | null: false |
 
 
-###Association
+### Association
 - has_many :items
 - has_many :buys
 
 
-##items テーブル
+## items テーブル
 
 |  column          |  type      |  options                       |
 |------------------|------------|--------------------------------|
 | item_name        | string     | null: false                    |
 | item-text        | string     | null: false                    |
-| category-id      | integer    | null: false                    |
+| category_id      | integer    | null: false                    |
 | item_status_id   | integer    | null: false                    |
 | postage_type_id  | integer    | null: false                    |
 | ship_from_id     | integer    | null: false                    |
@@ -37,12 +37,12 @@
 
 
 
-###Association
+### Association
 - belongs_to :user
-- has_many :buys
+- has_one :buy
 
 
-##buy テーブル
+## buy テーブル(購入履歴)
 
 |  column   |  type      |  options                       |
 |-----------|------------|--------------------------------|
@@ -50,13 +50,13 @@
 | item      | references | null: false, foreign_key: true |
 
 
-###Association
+### Association
 - belongs_to :user
 - belongs_to :item
 - has_one :user_address
 
 
-##user_address テーブル
+## user_address テーブル
 
 
 |  column        |  type      |  options                       |
@@ -70,5 +70,5 @@
 | buy            | references | null: false, foreign_key: true |
 
 
-###Association
+### Association
 - belongs_to :buy

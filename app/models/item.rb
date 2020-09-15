@@ -13,7 +13,7 @@ class Item < ApplicationRecord
 
   validates :name, :text, :category_id, :status_id, :postage_type_id, :ship_from_id, :delivery_time_id, :price, :image, presence: true
   validates :category_id, :status_id, :postage_type_id, :ship_from_id, :delivery_time_id, numericality: { other_than: 1 }
-  validates :price, format: { with: /\A[0-9]+\z/ }, inclusion: { in: 300..9_999_999, message: 'Out of setting range'}
+  validates :price, format: { with: /\A[0-9]+\z/ }, inclusion: { in: 300..9_999_999, message: 'Out of setting range' }
 
   def was_attached?
     image.attached?

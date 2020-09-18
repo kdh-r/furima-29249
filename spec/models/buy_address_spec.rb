@@ -13,7 +13,13 @@ RSpec.describe BuyAddress, type: :model do
         it '全て入力されていれば購入できる' do
           expect(@buy_address).to be_valid
         end
+
+        it '建物が空欄でも登録できる' do
+          @buy_address.building = nil
+          expect(@buy_address).to be_valid
+        end
       end
+
 
       context '商品購入がうまくいかないとき' do
         it 'カード情報が適切に打ち込まれていないと購入できない' do

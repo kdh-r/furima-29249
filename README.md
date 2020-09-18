@@ -56,6 +56,7 @@
 - has_one :user_address
 
 
+
 ## user_address テーブル
 
 
@@ -72,3 +73,5 @@
 
 ### Association
 - belongs_to :buy
+
+

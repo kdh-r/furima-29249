@@ -75,3 +75,5 @@
 - belongs_to :buy
 
 
+
+

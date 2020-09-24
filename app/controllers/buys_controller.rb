@@ -32,6 +32,8 @@ class BuysController < ApplicationController
     @item = Item.find(params[:item_id])
   end
 
+  Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_PRIVATE_KEY]
+
 
   # 決済処理
   def pay_item

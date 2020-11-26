@@ -10,7 +10,7 @@ class ItemsController < ApplicationController
     @item = Item.new
   end
 
-  
+
   def create
     @item = Item.new(item_params)
     if @item.valid?
@@ -21,6 +21,7 @@ class ItemsController < ApplicationController
     end
   end
 
+  
   def show
   end
 
